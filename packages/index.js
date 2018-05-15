@@ -1,6 +1,6 @@
-import Button from './button/index'
-import Input from './input/index'
-import Container from './container/index'
+import Button from './button/index.js'
+import Input from './input/index.js'
+import Container from './container/index.js'
 
 const Component = [
   Button,

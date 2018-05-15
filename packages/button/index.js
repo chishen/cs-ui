@@ -1,4 +1,4 @@
-import CsButton from './src/button'
+import CsButton from './src/button.vue'
 
 CsButton.install = function (Vue) {
   Vue.component(CsButton.name, CsButton)
