@@ -2,6 +2,7 @@
   <div>
     <cs-button>sdaf</cs-button>
     <cs-input></cs-input>
+    <cs-container></cs-container>
   </div>
 </template>
 
@@ -17,6 +18,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped rel="stylesheet/sass" type="text/sass">
+<!--<style scoped rel="stylesheet/sass" type="text/sass">-->
 
-</style>
+<!--</style>-->

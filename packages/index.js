@@ -1,16 +1,12 @@
-import Button from './button/button'
-import Input from './input/input'
+import Button from './button/index'
+import Input from './input/index'
+import Container from './container/index'
 
 const Component = [
   Button,
-  Input
+  Input,
+  Container
 ]
-
-Component.forEach(item => {
-  item.install = function (Vue) {
-    Vue.component(item.name, item)
-  }
-})
 
 const install = function (Vue) {
   Component.map(component => {
@@ -25,9 +21,10 @@ if (typeof window !== 'undefined' && window.Vue) {
 const Cs = {
   install,
   Button,
-  Input
+  Input,
+  Container
 }
 
-export {Button, Input}
+export {Button, Input, Container}
 
 export default Cs
