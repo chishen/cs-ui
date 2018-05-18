@@ -5,6 +5,8 @@ import Header from './header/index.js'
 import Aside from './aside/index.js'
 import Main from './main/index.js'
 import Footer from './footer/index.js'
+import Row from './row/index.js'
+import Col from './col/index.js'
 
 const Component = [
   Button,
@@ -13,7 +15,9 @@ const Component = [
   Header,
   Aside,
   Main,
-  Footer
+  Footer,
+  Row,
+  Col
 ]
 
 const install = function (Vue) {
@@ -34,9 +38,11 @@ const Cs = {
   Header,
   Aside,
   Main,
-  Footer
+  Footer,
+  Row,
+  Col
 }
 
-export {Button, Input, Container, Header, Aside, Main, Footer}
+export {Button, Input, Container, Header, Aside, Main, Footer, Row, Col}
 
 export default Cs

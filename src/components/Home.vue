@@ -1,12 +1,23 @@
 <template>
-    <cs-container style="background: #ddd">
+    <cs-container>
       <cs-header></cs-header>
       <cs-container>
         <cs-aside></cs-aside>
-        <cs-main>
-          <div style="background: #fff;height: 100%">
-            <cs-button>sdaf</cs-button>
-            <cs-input></cs-input>
+        <cs-main style="background: #ededed;">
+          <div style="background: #fff;height: 100%;">
+            <cs-row :gutter="20" style="height: 100%">
+              <cs-col :span="14">
+                <div style="background: red;">
+                  <cs-button>sdaf</cs-button>
+                  <cs-input></cs-input>
+                </div>
+              </cs-col>
+              <cs-col :span="10">
+                <div style="background: blue;height: 100px;">
+
+                </div>
+              </cs-col>
+            </cs-row>
           </div>
 
         </cs-main>

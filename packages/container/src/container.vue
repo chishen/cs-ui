@@ -17,8 +17,8 @@
           return true
         }
         if(this.$slots && this.$slots.default){
-          return this.$slots.default.some(item => {
-            const tag = item.componentOptions && item.componentOptions.tag;
+          return this.$slots.default.some(VNode => {
+            const tag = VNode.componentOptions && VNode.componentOptions.tag;
             return tag === 'cs-header' || tag === 'cs-footer';
           })
         }else{
