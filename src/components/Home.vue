@@ -14,7 +14,7 @@
               </cs-col>
               <cs-col :span="10">
                 <div style="background: blue;height: 100px;">
-
+                  <cs-icon class="circle" type="question-circle"></cs-icon>
                 </div>
               </cs-col>
             </cs-row>
