@@ -13,6 +13,6 @@
   .cs-aside{
     width: 200px;
     flex: 0 0 auto;
-    background: blueviolet;
+    background: @background;
   }
 </style>
