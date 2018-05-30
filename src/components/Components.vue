@@ -4,7 +4,7 @@
       <div class="header_div">
         <ul>
           <li><router-link :class="{'active': $route.path === '/'}" to="/">首页</router-link></li>
-          <li><router-link :class="{'active': $route.path.includes('/components')}" to="/components/button">组件</router-link></li>
+          <li><router-link :class="{'active': $route.path.includes('/components')}" to="/components/grid">组件</router-link></li>
         </ul>
       </div>
     </cs-header>
@@ -36,6 +36,14 @@
     data () {
       return {
         items: [{
+          url: '/components/grid',
+          englishName: 'Grid',
+          chineseName: '栅格'
+        },{
+          url: '/components/layout',
+          englishName: 'Layout',
+          chineseName: '布局'
+        },{
           url: '/components/button',
           englishName: 'Button',
           chineseName: '按钮'
@@ -107,8 +115,12 @@
              }
            }
           a{
+            display: block;
             text-decoration: none;
             color: #333;
+            &:hover{
+               color: #1890ff;
+             }
           }
         }
       }

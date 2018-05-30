@@ -4,11 +4,11 @@
       <header>
         <ul>
           <li><router-link :to="{path: '/', query: {index: '123'}}">起步</router-link></li>
-          <li><router-link to="/components/button">组件</router-link></li>
+          <li><router-link to="/components/grid">组件</router-link></li>
         </ul>
       </header>
       <div class="vm title">cs-ui</div>
-      <div class="vm button"><router-link to="/components/button">快速开始</router-link></div>
+      <div class="vm button"><router-link to="/components/grid">快速开始</router-link></div>
     </div>
   </div>
 </template>
