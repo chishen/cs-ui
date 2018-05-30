@@ -29,7 +29,7 @@
               <th>参数</th>
               <th>说明</th>
               <th>类型</th>
-              <th>可选值</th>
+              <!--<th>可选值</th>-->
               <th>默认值</th>
             </tr>
           </thead>
@@ -38,28 +38,28 @@
               <td>align</td>
               <td>flex 布局下的垂直排列方式</td>
               <td>string</td>
-              <td>flex-start/flex-end/center/space-between/space-around/stretch</td>
+              <!--<td>flex-start/flex-end/center/space-between/space-around/stretch</td>-->
               <td>flex-start</td>
             </tr>
             <tr>
               <td>gutter</td>
               <td>栅格间隔</td>
               <td>number</td>
-              <td>—</td>
+              <!--<td>—</td>-->
               <td>0</td>
             </tr>
             <tr>
               <td>justify</td>
               <td>flex 布局下的水平排列方式</td>
               <td>string</td>
-              <td>flex-start/flex-end/center/space-between/space-around</td>
+              <!--<td>flex-start/flex-end/center/space-between/space-around</td>-->
               <td>flex-start</td>
             </tr>
             <tr>
               <td>display</td>
               <td>布局模式，可选 flex，现代浏览器下有效</td>
               <td>string</td>
-              <td>—</td>
+              <!--<td>—</td>-->
               <td>flex</td>
             </tr>
           </tbody>
