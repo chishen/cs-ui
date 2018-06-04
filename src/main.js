@@ -5,10 +5,12 @@ import App from './App'
 import router from './router'
 import Cs from '../packages/index'
 import highlight from './plugins/highlight'
-// import CsApi from './components/Api'
+import Example from './components/Example'
+import Api from './components/Api'
 Vue.use(Cs)
 Vue.use(highlight)
-// Vue.component('cs-api', CsApi)
+Vue.component('cs-example', Example)
+Vue.component('cs-api', Api)
 Vue.config.productionTip = false
 // Vue.component('cs-input', CsInput)
 

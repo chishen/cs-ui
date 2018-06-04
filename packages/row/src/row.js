@@ -30,6 +30,8 @@ export default {
         sty.display = 'flex'
         sty.justifyContent = this.justify
         sty.alignItems = this.align
+      } else {
+        sty.display = this.display
       }
       return sty
     }

@@ -11,12 +11,12 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'Layout',
-    data () {
-      return {
-        msg: 'Welcome to Your Vue.js App'
-      }
+export default {
+  name: 'Layout',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
     }
   }
+}
 </script>

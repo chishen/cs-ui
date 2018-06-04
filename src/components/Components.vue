@@ -12,7 +12,8 @@
       <cs-aside class="cs_aside">
         <ul>
           <li
-            v-for="item in items"
+            v-for="(item, index) in items"
+            :key="index"
             :class="{'active': $route.path === item.url}"
           >
             <router-link
@@ -23,7 +24,7 @@
           </li>
         </ul>
       </cs-aside>
-      <cs-main style="background: #fff;">
+      <cs-main class="cs_main">
         <router-view/>
       </cs-main>
     </cs-container>
@@ -31,40 +32,43 @@
   </cs-container>
 </template>
 <script>
-  export default {
-    name: 'Components',
-    data () {
-      return {
-        items: [{
-          url: '/components/grid',
-          englishName: 'Grid',
-          chineseName: '栅格'
-        },{
-          url: '/components/layout',
-          englishName: 'Layout',
-          chineseName: '布局'
-        },{
-          url: '/components/button',
-          englishName: 'Button',
-          chineseName: '按钮'
-        },{
-          url: '/components/icon',
-          englishName: 'Icon',
-          chineseName: '图标'
-        }]
-      }
-    },
-    mounted: function () {
-      console.log(this.$route.query)
+export default {
+  name: 'Components',
+  data () {
+    return {
+      items: [{
+        url: '/components/grid',
+        englishName: 'Grid',
+        chineseName: '栅格'
+      }, {
+        url: '/components/layout',
+        englishName: 'Layout',
+        chineseName: '布局'
+      }, {
+        url: '/components/button',
+        englishName: 'Button',
+        chineseName: '按钮'
+      }, {
+        url: '/components/icon',
+        englishName: 'Icon',
+        chineseName: '图标'
+      }]
     }
+  },
+  mounted: function () {
+    // console.log(this.$route.query)
   }
+}
 </script>
-<style lang="less" scoped rel="stylesheet/less">
+<style lang="less" rel="stylesheet/less">
   @import '../css/common.less';
   .cs_header{
-    background: #fff;
+    background: #fff !important;
     transition: all .4s;
     border-bottom: 1px solid #eee;
+    position: fixed;
+    z-index: 9;
+    width: 100%;
     .header_div{
       .wh(1200px, 100%);
       .mlmr;
@@ -91,11 +95,15 @@
   }
   .cs_container{
     width: 1200px;
+    padding-top: 64px;
     .mlmr;
     .cs_aside{
       width: 240px;
       background: #fff;
       border-right: 1px solid #eee;
+      position: fixed;
+      z-index: 9;
+      height: calc(100% - 64px);
       transition: all .4s;
       ul{
         li{
@@ -125,6 +133,12 @@
         }
       }
     }
+  .cs_main{
+    background: #fff;
+    width: 960px;
+    position: relative;
+    left: 240px;
+    flex: none;
   }
-
+  }
 </style>

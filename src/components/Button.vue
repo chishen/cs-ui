@@ -17,12 +17,12 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'Button',
-    data () {
-      return {
-        msg: 'Welcome to Your Vue.js App'
-      }
+export default {
+  name: 'Button',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
     }
   }
+}
 </script>

@@ -1,55 +1,59 @@
 <template>
-  <h2 v-text="title"></h2>
-  <cs-row class="table_row">
-    <cs-col :span="24">
-      <table>
-        <thead>
-        <tr>
-          <th>参数</th>
-          <th>说明</th>
-          <th>类型</th>
-          <th>可选值</th>
-          <th>默认值</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr v-for="x in dataSource">
+  <div>
+    <h2 v-text="title"></h2>
+    <cs-row class="table_row" display="block">
+      <cs-col :span="24">
+        <table>
+          <thead>
+          <tr>
+            <th>参数</th>
+            <th>说明</th>
+            <th>类型</th>
+            <th>可选值</th>
+            <th>默认值</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr v-for="(x, index) in dataSource" :key="index">
             <td v-text="x.param"></td>
             <td v-text="x.info"></td>
             <td v-text="x.type"></td>
             <td v-text="x.options"></td>
             <td v-text="x.defaults"></td>
           </tr>
-        </tbody>
-      </table>
-    </cs-col>
-  </cs-row>
+          </tbody>
+        </table>
+      </cs-col>
+    </cs-row>
+  </div>
 </template>
 <script>
-  export default {
-    name: 'CsApi',
-    props: {
-      dataSource: {
-        type: Array,
-        default: [{
+export default {
+  name: 'Api',
+  props: {
+    dataSource: {
+      type: Array,
+      default: function () {
+        return [{
           param: '—',
           info: '—',
           type: '—',
           options: '—',
           defaults: '—'
         }]
-      },
-      title: {
-        type: String,
-        required: true
       }
     },
-    data () {
-      return {
+    title: {
+      type: String,
+      required: true
+    }
+  },
+  data () {
+    return {
 
-      }
     }
   }
+}
 </script>
 <style lang="less" rel="stylesheet/less">
   .table_row{
@@ -66,6 +70,7 @@
           background: rgba(0,0,0,.02);
           font-weight: normal;
           font-size: 14px;
+          white-space: nowrap;
         }
         td{
           border: 1px solid #ebedf0;

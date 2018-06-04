@@ -37,11 +37,6 @@ export default new Router({
           component: Button
         },
         {
-          path: '/components/button',
-          name: 'Button',
-          component: Button
-        },
-        {
           path: '/components/icon',
           name: 'Icon',
           component: Icon
