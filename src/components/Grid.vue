@@ -15,63 +15,58 @@
           <cs-col :span="8">col-8</cs-col>
           <cs-col :span="8">col-8</cs-col>
         </cs-row>
-        <div class="showCode">显示代码</div>
-        <code>adfads</code>
+        <div class="showCode" @click="showCode" v-text="show_code?'隐藏代码':'显示代码'"></div>
+        <div v-highlight>
+          <div :class="{'code_active': show_code}" v-html="html"></div>
+        </div>
       </cs-col>
     </cs-row>
     <div class="type" style="padding-bottom: 24px;"><h1>API</h1></div>
-    <h2>Row</h2>
-    <cs-row class="table_row">
-      <cs-col :span="24">
-        <table>
-          <thead>
-            <tr>
-              <th>参数</th>
-              <th>说明</th>
-              <th>类型</th>
+    <!--<cs-api title="Row"></cs-api>-->
+    <!--<h2>Row</h2>-->
+    <!--<cs-row class="table_row">-->
+      <!--<cs-col :span="24">-->
+        <!--<table>-->
+          <!--<thead>-->
+            <!--<tr>-->
+              <!--<th>参数</th>-->
+              <!--<th>说明</th>-->
+              <!--<th>类型</th>-->
               <!--<th>可选值</th>-->
-              <th>默认值</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>align</td>
-              <td>flex 布局下的垂直排列方式</td>
-              <td>string</td>
+              <!--<th>默认值</th>-->
+            <!--</tr>-->
+          <!--</thead>-->
+          <!--<tbody>-->
+            <!--<tr>-->
+              <!--<td>align</td>-->
+              <!--<td>flex 布局下的垂直排列方式</td>-->
+              <!--<td>string</td>-->
               <!--<td>flex-start/flex-end/center/space-between/space-around/stretch</td>-->
-              <td>flex-start</td>
-            </tr>
-            <tr>
-              <td>gutter</td>
-              <td>栅格间隔</td>
-              <td>number</td>
+              <!--<td>flex-start</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td>gutter</td>-->
+              <!--<td>栅格间隔</td>-->
+              <!--<td>number</td>-->
               <!--<td>—</td>-->
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>justify</td>
-              <td>flex 布局下的水平排列方式</td>
-              <td>string</td>
+              <!--<td>0</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td>justify</td>-->
+              <!--<td>flex 布局下的水平排列方式</td>-->
+              <!--<td>string</td>-->
               <!--<td>flex-start/flex-end/center/space-between/space-around</td>-->
-              <td>flex-start</td>
-            </tr>
-            <tr>
-              <td>display</td>
-              <td>布局模式，可选 flex，现代浏览器下有效</td>
-              <td>string</td>
+              <!--<td>flex-start</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td>display</td>-->
+              <!--<td>布局模式，可选 flex，现代浏览器下有效</td>-->
+              <!--<td>string</td>-->
               <!--<td>—</td>-->
-              <td>flex</td>
-            </tr>
-          </tbody>
-        </table>
-      </cs-col>
-    </cs-row>
-    <!--<cs-row :gutter="20" style="height: 100%">-->
-      <!--<cs-col :span="14">-->
-        <!--<div style="background: red;">-->
-          <!--<cs-button>grid</cs-button>-->
-          <!--<cs-input></cs-input>-->
-        <!--</div>-->
+              <!--<td>flex</td>-->
+            <!--</tr>-->
+          <!--</tbody>-->
+        <!--</table>-->
       <!--</cs-col>-->
     <!--</cs-row>-->
   </div>
@@ -81,12 +76,34 @@
     name: 'Grid',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        html: "",
+        show_code: false
+      }
+    },
+    created () {
+        this.html =
+          `<pre><code>
+          var express = require('express');
+          var app = express();
+          app.get('/', function (req, res) {
+              res.send('http://yunkus.com');
+          });
+          var server = app.listen(3000, function () {
+              var host = server.address().address;
+              var port = server.address().port;
+              console.log('云库网', host, port);
+          });
+          </code></pre>`
+    },
+    methods: {
+      showCode: function ($event) {
+        this.show_code = !this.show_code;
+        console.log(this.show_code)
       }
     }
   }
 </script>
-<style lang="less" scoped rel="stylesheet/less">
+<style lang="less" rel="stylesheet/less">
   @import '../css/common.less';
   h1{
     font-size: 30px;
@@ -133,6 +150,7 @@
   }
   .table_row{
     table{
+      /*table-layout:fixed;*/
       width: 100%;
       margin-bottom: 40px;
       tr{
