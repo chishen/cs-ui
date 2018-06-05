@@ -8,7 +8,7 @@ export default {
       default: 'div'
     },
     gutter: Number,
-    display: {
+    type: {
       type: String,
       default: 'flex'
     },
@@ -26,12 +26,12 @@ export default {
     style () {
       const sty = {}
       this.gutter && (sty.marginRight = sty.marginLeft = `-${this.gutter / 2}px`)
-      if (this.display === 'flex') {
+      if (this.type === 'flex') {
         sty.display = 'flex'
         sty.justifyContent = this.justify
         sty.alignItems = this.align
       } else {
-        sty.display = this.display
+        sty.display = this.type
       }
       return sty
     }

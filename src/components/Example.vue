@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="cs-example">
     <h2 v-text="title"></h2>
-    <div v-html="des"></div>
+    <div v-html="des" class="cs-des"></div>
     <cs-row>
       <cs-col class="cs_col" :span="24">
         <slot></slot>
@@ -40,18 +40,23 @@ export default {
 }
 </script>
 <style lang="less" rel="stylesheet/less">
+  .cs-example{
   h2{
     font-size: 22px;
     font-weight: normal;
     margin-bottom: 8px;
     margin-top: 8px;
   }
-  p{
-    font-size: 14px;
-    color: #314659;
+  .cs-des{
+  code{
+    margin: 0 1px;
+    background: #f2f4f5;
+    padding: .2em .4em;
+    border-radius: 3px;
+    font-size: .9em;
+    border: 1px solid #eee;
+    font-family: Consolas,Menlo,Courier,monospace;
   }
-  .type{
-    padding-bottom: 80px;
   }
   .cs_col{
     border: 1px solid #eee;
@@ -65,10 +70,11 @@ export default {
     color: #314659;
     text-align: right;
     font-size: 14px;
-    span:hover{
-     color: #1890ff;
-      cursor: pointer;
-   }
+    padding-top: 16px;
+  span:hover{
+    color: #1890ff;
+    cursor: pointer;
+  }
   }
   .code_active{
   .hljs{
@@ -76,6 +82,7 @@ export default {
     padding-top: 8px;
     padding-bottom: 8px;
     margin-top: 8px;
+  }
   }
   }
 </style>

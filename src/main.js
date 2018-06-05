@@ -7,6 +7,8 @@ import Cs from '../packages/index'
 import highlight from './plugins/highlight'
 import Example from './components/Example'
 import Api from './components/Api'
+import Util from './js/common'
+Vue.use(Util)
 Vue.use(Cs)
 Vue.use(highlight)
 Vue.component('cs-example', Example)

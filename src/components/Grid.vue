@@ -2,41 +2,139 @@
   <div style="background: #fff;height: 100%;">
     <div class="type"><h1>Grid 栅格</h1><p>24 栅格系统。</p></div>
     <cs-example
-      title="基础栅格"
-      des="<p>从堆叠到水平排列。</p><p>使用单一的一组 Row 和 Col 栅格组件，就可以创建一个基本的栅格系统，所有列（Col）必须放在 Row 内。</p>"
-      :code="code"
+      :title="example_1.title"
+      :des="example_1.des"
+      :code="example_1.code"
     >
-      <cs-row class="demo_row">
-      <cs-col :span="12">col-12</cs-col>
-      <cs-col :span="12">col-12</cs-col>
+      <cs-row class="demo-grid">
+      <cs-col :span="12"><div>col-12</div></cs-col>
+      <cs-col :span="12"><div>col-12</div></cs-col>
       </cs-row>
-      <cs-row class="demo_row">
-      <cs-col :span="8">col-8</cs-col>
-      <cs-col :span="8">col-8</cs-col>
-      <cs-col :span="8">col-8</cs-col>
+      <cs-row class="demo-grid">
+      <cs-col :span="8"><div>col-8</div></cs-col>
+      <cs-col :span="8"><div>col-8</div></cs-col>
+      <cs-col :span="8"><div>col-8</div></cs-col>
       </cs-row>
-      <cs-row class="demo_row">
-        <cs-col :span="6">col-6</cs-col>
-        <cs-col :span="6">col-6</cs-col>
-        <cs-col :span="6">col-6</cs-col>
-        <cs-col :span="6">col-6</cs-col>
+      <cs-row class="demo-grid" style="margin-bottom: 0;">
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6"><div>col-6</div></cs-col>
       </cs-row>
     </cs-example>
     <cs-example
-      title="区块间隔"
-      des="<p>栅格常常需要和间隔进行配合，你可以使用 Row 的 gutter 属性，我们推荐使用 (16+8n)px 作为栅格间隔。(n 是自然数)</p>"
-      :code="code"
+      :title="example_2.title"
+      :des="example_2.des"
+      :code="example_2.code"
     >
-      <cs-row :gutter="16" class="demo_row">
-        <cs-col :span="6">col-6</cs-col>
-        <cs-col :span="6">col-6</cs-col>
-        <cs-col :span="6">col-6</cs-col>
-        <cs-col :span="6">col-6</cs-col>
+      <cs-row :gutter="16" class="demo-grid" style="margin-bottom: 0;">
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6"><div>col-6</div></cs-col>
       </cs-row>
     </cs-example>
-    <div class="type" style="padding-bottom: 24px;"><h1>API</h1></div>
-    <cs-api title="Row" :dataSource="dataSource.row"></cs-api>
-    <cs-api title="Col" :dataSource="dataSource.col"></cs-api>
+    <cs-example
+      :title="example_3.title"
+      :des="example_3.des"
+      :code="example_3.code"
+    >
+      <cs-row :gutter="16" class="demo-grid">
+        <cs-col :span="16"><div>col-16</div></cs-col>
+        <cs-col :span="8"><div>col-8</div></cs-col>
+      </cs-row>
+      <cs-row :gutter="16" class="demo-grid">
+        <cs-col :span="8"><div>col-8</div></cs-col>
+        <cs-col :span="8"><div>col-8</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+      </cs-row>
+      <cs-row :gutter="16" class="demo-grid" style="margin-bottom: 0;">
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="16"><div>col-16</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+      </cs-row>
+    </cs-example>
+    <cs-example
+      :title="example_4.title"
+      :des="example_4.des"
+      :code="example_4.code"
+    >
+      <cs-row class="demo-grid">
+        <cs-col :span="8"><div>col-8</div></cs-col>
+        <cs-col :span="8" :offset="8"><div>col-8</div></cs-col>
+      </cs-row>
+      <cs-row class="demo-grid">
+        <cs-col :span="6" :offset="6"><div>col-6</div></cs-col>
+        <cs-col :span="6" :offset="6"><div>col-6</div></cs-col>
+      </cs-row>
+      <cs-row class="demo-grid" style="margin-bottom: 0;">
+        <cs-col :span="12" :offset="6"><div>col-12</div></cs-col>
+      </cs-row>
+    </cs-example>
+    <cs-example
+      :title="example_5.title"
+      :des="example_5.des"
+      :code="example_5.code"
+    >
+      <cs-row class="demo-grid" justify="flex-start">
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+      </cs-row>
+      <cs-row class="demo-grid" justify="flex-end">
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+      </cs-row>
+      <cs-row class="demo-grid" justify="center">
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+      </cs-row>
+      <cs-row class="demo-grid" justify="space-between">
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+      </cs-row>
+      <cs-row class="demo-grid" justify="space-around" style="margin-bottom: 0;">
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+        <cs-col :span="4"><div>col-4</div></cs-col>
+      </cs-row>
+    </cs-example>
+    <cs-example
+      :title="example_6.title"
+      :des="example_6.des"
+      :code="example_6.code"
+    >
+      <cs-row class="demo-grid" align="flex-start">
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+      </cs-row>
+      <cs-row class="demo-grid" align="flex-end">
+        <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+        <cs-col :span="6"><div>col-6</div></cs-col>
+      </cs-row>
+      <cs-row class="demo-grid" align="center" style="margin-bottom: 0;">
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+        <cs-col :span="6"><div>col-6</div></cs-col>
+        <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+      </cs-row>
+    </cs-example>
+    <div class="type" style="padding-bottom: 24px;padding-top: 80px;"><h1>API</h1></div>
+    <cs-api title="Row 属性" :dataSource="dataSource.row"></cs-api>
+    <cs-api title="Col 属性" :dataSource="dataSource.col"></cs-api>
   </div>
 </template>
 <script>
@@ -44,25 +142,167 @@ export default {
   name: 'Grid',
   data () {
     return {
-      code: `<pre><code>
-        var express = require('express');
-        var app = express();
-        app.get('/', function (req, res) {
-            res.send('http://yunkus.com');
-        });
-        var server = app.listen(3000, function () {
-            var host = server.address().address;
-            var port = server.address().port;
-            console.log('云库网', host, port);
-        });
-        </code></pre>`,
+      example_1: {
+        title: '基础栅格',
+        des: `<p>从堆叠到水平排列。</p>
+              <p>使用单一的一组 <code>Row</code> 和 <code>Col</code> 栅格组件，就可以创建一个基本的栅格系统，所有列（Col）必须放在 <code>Row</code> 内。</p>`,
+        code: `<pre><code>
+  ${this.escapeHTML(
+    `<cs-row>
+    <cs-col :span="12"><div>col-12</div></cs-col>
+    <cs-col :span="12"><div>col-12</div></cs-col>
+  </cs-row>
+  <cs-row>
+    <cs-col :span="8"><div>col-8</div></cs-col>
+    <cs-col :span="8"><div>col-8</div></cs-col>
+    <cs-col :span="8"><div>col-8</div></cs-col>
+  </cs-row>
+  <cs-row>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+  </cs-row>`
+  )}
+              </code></pre>`
+      },
+      example_2: {
+        title: '区块间隔',
+        des: `<p>栅格常常需要和间隔进行配合，你可以使用 <code>Row</code> 的 <code>gutter</code> 属性，我们推荐使用 <code>(16+8n)px</code> 作为栅格间隔。(n 是自然数)</p>`,
+        code: `<pre><code>
+  ${this.escapeHTML(
+    `<cs-row :gutter="16">
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+  </cs-row>`
+  )}
+              </code></pre>`
+      },
+      example_3: {
+        title: '混合布局',
+        des: `<p>通过基础的 1/24 分栏任意扩展组合形成较为复杂的混合布局。</p>`,
+        code: `<pre><code>
+  ${this.escapeHTML(
+    `<cs-row :gutter="16">
+    <cs-col :span="16"><div>col-16</div></cs-col>
+    <cs-col :span="8"><div>col-8</div></cs-col>
+  </cs-row>
+  <cs-row :gutter="16">
+    <cs-col :span="8"><div>col-8</div></cs-col>
+    <cs-col :span="8"><div>col-8</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+  </cs-row>
+  <cs-row :gutter="16">
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="16"><div>col-16</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+  </cs-row>`
+  )}
+              </code></pre>`
+      },
+      example_4: {
+        title: '左右偏移',
+        des: `<p>使用 <code>offset</code> 可以将列向右侧偏。例如，<code>:offset="4"</code> 将元素向右侧偏移了 4 个列（column）的宽度。</p>`,
+        code: `<pre><code>
+  ${this.escapeHTML(
+    `<cs-row>
+    <cs-col :span="8"><div>col-8</div></cs-col>
+    <cs-col :span="8" :offset="8"><div>col-8</div></cs-col>
+  </cs-row>
+  <cs-row>
+    <cs-col :span="6" :offset="6"><div>col-6</div></cs-col>
+    <cs-col :span="6" :offset="6"><div>col-6</div></cs-col>
+  </cs-row>
+  <cs-row>
+    <cs-col :span="12" :offset="6"><div>col-12</div></cs-col>
+  </cs-row>`
+  )}
+              </code></pre>`
+      },
+      example_5: {
+        title: 'Flex水平',
+        des: `<p>使用 <code>type</code> 定义 <code>flex</code> 布局，其子元素根据不同的值 <code>flex-start</code> <code>flex-end</code> <code>center</code> <code>space-between</code> <code>space-around</code>，分别定义其在父节点里面的排版方式。`,
+        code: `<pre><code>
+  ${this.escapeHTML(
+    `<cs-row justify="flex-start">
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+  </cs-row>
+  <cs-row justify="flex-end">
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+  </cs-row>
+  <cs-row justify="center">
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+  </cs-row>
+  <cs-row justify="space-between">
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+  </cs-row>
+  <cs-row justify="space-around">
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+    <cs-col :span="4"><div>col-4</div></cs-col>
+  </cs-row>`
+  )}
+              </code></pre>`
+      },
+      example_6: {
+        title: 'Flex垂直',
+        des: `<p>Flex 子元素垂直对齐。`,
+        code: `<pre><code>
+  ${this.escapeHTML(
+    `<cs-row align="flex-start">
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+  </cs-row>
+  <cs-row align="flex-end">
+    <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+  </cs-row>
+  <cs-row align="center">
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+    <cs-col :span="6"><div>col-6</div></cs-col>
+    <cs-col :span="6" class="height_80"><div>col-6</div></cs-col>
+  </cs-row>
+
+  <style>
+    .height_80{
+      height: 80px;
+      line-height: 80px;
+    }
+    .height_80 div{
+      height: 100%;
+    }
+  </style>`
+  )}
+              </code></pre>`
+      },
       show_code: false,
       dataSource: {
         row: [{
           param: 'align',
           info: 'flex 布局下的垂直排列方式',
           type: 'string',
-          options: 'flex-start/flex-end/center/space-between/space-around/stretch',
+          options: 'flex-start/flex-end/center',
           defaults: 'flex-start'
         }, {
           param: 'gutter',
@@ -122,15 +362,9 @@ export default {
   }
 }
 </script>
-<style lang="less" rel="stylesheet/less">
+<style lang="less" scoped rel="stylesheet/less">
   @import '../css/common.less';
-  h1{
-    font-size: 30px;
-    font-weight: normal;
-    margin-bottom: 20px;
-    margin-top: 8px;
-  }
-  .demo_row{
+  .demo-grid{
     margin-bottom: 16px;
   .cs-col{
     height: 40px;
@@ -139,11 +373,22 @@ export default {
     line-height: 40px;
     font-size: 14px;
   &:nth-child(odd){
-     background: rgba(0,160,233,.7);
+    div{
+      background: rgba(0,160,233,.7);
+    }
    }
   &:nth-child(even){
-     background: rgb(0,160,233);
+    div{
+      background: rgb(0,160,233);
+    }
    }
+  &.height_80{
+    height: 80px;
+    line-height: 80px;
+  div{
+    height: 100%;
+  }
+  }
   }
   }
 </style>
