@@ -1,13 +1,6 @@
 <template>
   <div style="background: #fff;height: 100%;">
-    <cs-row :gutter="20" style="height: 100%">
-      <cs-col :span="14">
-        <div style="background: red;">
-          <cs-button>icon</cs-button>
-          <cs-input></cs-input>
-        </div>
-      </cs-col>
-    </cs-row>
+    <div class="type"><h1>Icon 图标</h1><p>提供了一套常用的图标集合。</p></div>
   </div>
 </template>
 <script>
@@ -20,3 +13,6 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped rel="stylesheet/less">
+  @import '../css/common.less';
+</style>

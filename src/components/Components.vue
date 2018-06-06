@@ -9,7 +9,7 @@
       </div>
     </cs-header>
     <cs-container class="cs_container">
-      <cs-aside class="cs_aside">
+      <cs-aside class="cs_aside" width="240px">
         <ul>
           <li
             v-for="(item, index) in items"
@@ -94,7 +94,7 @@ export default {
     }
   }
   .cs_container{
-    width: 1200px;
+    width: 1200px !important;
     padding-top: 64px;
     .mlmr;
     .cs_aside{
