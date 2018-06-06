@@ -296,7 +296,6 @@ export default {
   )}
               </code></pre>`
       },
-      show_code: false,
       dataSource: {
         row: [{
           param: 'align',
@@ -349,7 +348,6 @@ export default {
           defaults: 'div'
         }]
       }
-
     }
   },
   created () {
