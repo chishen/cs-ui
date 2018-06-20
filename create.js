@@ -1,6 +1,6 @@
 let fs = require('fs');
 let path = require('path');
-const Name = 'radio';
+const Name = 'button-group';
 //判断文件是否存在
 if(!fs.existsSync(__dirname + '/packages/' + Name)){
   fs.mkdirSync(__dirname + '/packages/' + Name);

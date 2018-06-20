@@ -1,5 +1,6 @@
 import Aside from './aside/index.js'
 import Button from './button/index.js'
+import ButtonGroup from './button-group/index.js'
 import Col from './col/index.js'
 import Container from './container/index.js'
 import Footer from './footer/index.js'
@@ -14,6 +15,7 @@ import Select from './select/index.js'
 const Component = [
   Aside,
   Button,
+  ButtonGroup,
   Col,
   Container,
   Footer,
@@ -40,6 +42,7 @@ const Cs = {
   install,
   Aside,
   Button,
+  ButtonGroup,
   Col,
   Container,
   Footer,
@@ -55,6 +58,7 @@ const Cs = {
 export {
   Aside,
   Button,
+  ButtonGroup,
   Col,
   Container,
   Footer,
